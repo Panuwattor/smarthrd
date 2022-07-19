@@ -96,6 +96,10 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
+        <!-- datepicker -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+        <!-- datepicker -->
+
 </head>
 
 <body data-url="/th" class="relative">
@@ -193,110 +197,31 @@
         <section class="site-container">
             <div class="auth-page">
                 <div class="container">
-                        <div class="h-title typo-lg fw-medium text-center">
-                            Chart
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                              <!-- AREA CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Area Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <div class="chart">
-                                    <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                  </div>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                  
-                              <!-- DONUT CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Donut Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                  
-                              <!-- PIE CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Pie Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                  
+                    <div class="default-filter">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="title">Datepicker</h2>
                             </div>
-                            <!-- /.col (LEFT) -->
-                            <div class="col-md-6">
-                              <!-- LINE CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Line Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <div class="chart">
-                                    <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                  </div>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                  
-                              <!-- BAR CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Bar Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <div class="chart">
-                                    <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                  </div>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                  
-                              <!-- STACKED BAR CHART -->
-                              <div class="card mt-5">
-                                <div class="card-header">
-                                  <h3 class="card-title">Stacked Bar Chart</h3>
-                                </div>
-                                <div class="card-body">
-                                  <div class="chart">
-                                    <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                  </div>
-                                </div>
-                                <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-
-                                <!-- STACKED BAR CHART -->
-                                <div class="card mt-5">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Horizontal Bar Chart</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart">
-                                        <canvas id="horizontalBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <div class="card-body">
+                                <form class="form-default">
+                                    <div class="row gutters-10 align-items-center">
+                                        <div class="col">
+                                            <label>default(en)</label>
+                                            <input class=" form-control input-medium" type="text" data-provide="datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <label>th</label>
+                                            <input class=" form-control input-medium" type="text" data-provide="datepicker" data-date-language="th">
+                                        </div>
+                                        <div class="col">
+                                            <label>th-th</label>
+                                            <input class=" form-control input-medium" type="text" data-provide="datepicker" data-date-language="th-th">
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
-                                    </div>
-                                    <!-- /.card -->
+                                </form>
                             </div>
-                            <!-- /.col (RIGHT) -->
-                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -671,241 +596,314 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX7KT2YYD3"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script>
-    $(function () {
-      /* ChartJS
-       * -------
-       * Here we will create a few charts using ChartJS
-       */
-  
-      //--------------
-      //- AREA CHART -
-      //--------------
-  
-      // Get context with jQuery - using jQuery's .get() method.
-      var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
-  
-      var areaChartData = {
-        labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-          {
-            label               : 'Digital Goods',
-            backgroundColor     : 'rgba(60,141,188,0.9)',
-            borderColor         : 'rgba(60,141,188,0.8)',
-            pointRadius          : false,
-            pointColor          : '#3b8bba',
-            pointStrokeColor    : 'rgba(60,141,188,1)',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data                : [28, 48, 40, 19, 86, 27, 90]
-          },
-          {
-            label               : 'Electronics',
-            backgroundColor     : 'rgba(210, 214, 222, 1)',
-            borderColor         : 'rgba(210, 214, 222, 1)',
-            pointRadius         : false,
-            pointColor          : 'rgba(210, 214, 222, 1)',
-            pointStrokeColor    : '#c1c7d1',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: 'rgba(220,220,220,1)',
-            data                : [65, 59, 80, 81, 56, 55, 40]
-          },
-        ]
-      }
+    /**
+ * Implement Thai-year handling inherit core datepicker and default bootstrap-datepicker backend.
+ */
 
+;(function($) {
+  var dates   = $.fn.datepicker.dates
+    , DPGlobal= $.fn.datepicker.DPGlobal
+    , thai    = { 
+                  adj     : 543
+                , code    : 'th'
+                , bound   : 2400  // full year value that detect as thai year 
+                , shbound : 40  // short year value that detect as thai year 
+                , shwrap  : 84  // short year value that wrap to previous century
+                , shbase  : 2000  // default base for short year 20xx
+                }
+                
+  function dspThaiYear(language) {
+    return language.search('-'+thai.code)>=0
+  }
   
-      var areaChartOptions = {
-        maintainAspectRatio : false,
-        responsive : true,
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            gridLines : {
-              display : false,
-            }
-          }],
-          yAxes: [{
-            gridLines : {
-              display : false,
-            }
-          }]
-        }
-      }
+  function smartThai(language){
+    return language.search(thai.code)>=0
+  }
   
-      // This will get the first returned node in the jQuery collection.
-      var areaChart       = new Chart(areaChartCanvas, { 
-        type: 'line',
-        data: areaChartData, 
-        options: areaChartOptions
-      })
+  function smartFullYear(v,language){
+    if (smartThai(language) && v>=thai.bound) 
+      v -= thai.adj // thaiyear 24xx -
+    
+    if (dspThaiYear(language) && v < thai.bound - thai.adj) 
+      v -= thai.adj
+    
+    return v;
+  }
   
-      //-------------
-      //- LINE CHART -
-      //--------------
-      var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-      var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-      var lineChartData = jQuery.extend(true, {}, areaChartData)
-      lineChartData.datasets[0].fill = false;
-      lineChartData.datasets[1].fill = false;
-      lineChartOptions.datasetFill = false
+  function smartShortYear(v,language) {
+    if (v<100){
+      if (v>=thai.shwrap) 
+        v -= 100; // 1970 - 1999
+        
+      if (smartThai(language) && v>=thai.shbound) 
+        v -= (thai.adj%100) // thaiyear [2540..2569] -> [1997..2026]
+
+      v += thai.shbase;
+    }
+    return v;
+  }
   
-      var lineChart = new Chart(lineChartCanvas, { 
-        type: 'line',
-        data: lineChartData, 
-        options: lineChartOptions
-      })
+  function smartYear(v,language) {
+    return smartFullYear(smartShortYear(v,language),language)
+  }
   
-      //-------------
-      //- DONUT CHART -
-      //-------------
-      // Get context with jQuery - using jQuery's .get() method.
-      var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-      var donutData        = {
-        labels: [
-            'Chrome', 
-            'IE',
-            'FireFox', 
-            'Safari', 
-            'Opera', 
-            'Navigator', 
-        ],
-        datasets: [
-          {
-            data: [700,500,400,600,300,100],
-            backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+  function UTCDate() {
+    return new Date(Date.UTC.apply(Date, arguments))
+  }
+
+  // inherit default backend
+  
+  if (DPGlobal.name && DPGlobal.name.search(/.th$/)>=0)
+    return
+    
+  var  _basebackend_ = $.extend({},DPGlobal)
+  
+  $.extend(DPGlobal,{
+      name:       (_basebackend_.name || '') + '.th'
+    , parseDate:  
+        function(date, format, language) {
+          if (date=='') {
+            date = new Date()
+            date = UTCDate(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0)
           }
-        ]
-      }
-      var donutOptions     = {
-        maintainAspectRatio : false,
-        responsive : true,
-      }
-      //Create pie or douhnut chart
-      // You can switch between pie and douhnut using the method below.
-      var donutChart = new Chart(donutChartCanvas, {
-        type: 'doughnut',
-        data: donutData,
-        options: donutOptions      
-      })
-  
-      //-------------
-      //- PIE CHART -
-      //-------------
-      // Get context with jQuery - using jQuery's .get() method.
-      var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-      var pieData        = donutData;
-      var pieOptions     = {
-        maintainAspectRatio : false,
-        responsive : true,
-      }
-      //Create pie or douhnut chart
-      // You can switch between pie and douhnut using the method below.
-      var pieChart = new Chart(pieChartCanvas, {
-        type: 'pie',
-        data: pieData,
-        options: pieOptions      
-      })
-  
-      //-------------
-      //- BAR CHART -
-      //-------------
-      var barChartCanvas = $('#barChart').get(0).getContext('2d')
-      var barChartData = jQuery.extend(true, {}, areaChartData)
-      var temp0 = areaChartData.datasets[0]
-      var temp1 = areaChartData.datasets[1]
-      barChartData.datasets[0] = temp1
-      barChartData.datasets[1] = temp0
-  
-      var barChartOptions = {
-        responsive              : true,
-        maintainAspectRatio     : false,
-        datasetFill             : false
-      }
-  
-      var barChart = new Chart(barChartCanvas, {
-        type: 'bar', 
-        data: barChartData,
-        options: barChartOptions
-      })
-  
-      //---------------------
-      //- STACKED BAR CHART -
-      //---------------------
-      var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
-      var stackedBarChartData = jQuery.extend(true, {}, barChartData)
-  
-      var stackedBarChartOptions = {
-        responsive              : true,
-        maintainAspectRatio     : false,
-        scales: {
-          xAxes: [{
-            stacked: true,
-          }],
-          yAxes: [{
-            stacked: true
-          }]
+
+          if (smartThai(language) 
+          && !((date instanceof Date) || /^[-+].*/.test(date))) {
+          
+            var formats = format //this.parseFormat(format)
+              , parts   = date && date.match(this.nonpunctuation) || []
+            
+            if (typeof formats === 'string')
+              formats = DPGlobal.parseFormat(format);
+            if (parts.length == formats.parts.length) {
+              var seps  = $.extend([], formats.separators)
+                , xdate = []
+                
+              for (var i=0, cnt = formats.parts.length; i < cnt; i++) {
+                if (~['yyyy','yy'].indexOf(formats.parts[i]))
+                  parts[i] = '' + smartYear(parseInt(parts[i], 10),language)
+                  
+                if (seps.length)
+                  xdate.push(seps.shift())
+                  
+                xdate.push(parts[i])
+              }
+              
+              date = xdate.join('')
+            }
+          }
+          return _basebackend_.parseDate.call(this,date,format,language)
         }
-      }
-  
-      var stackedBarChart = new Chart(stackedBarChartCanvas, {
-        type: 'bar', 
-        data: stackedBarChartData,
-        options: stackedBarChartOptions
-      })
+    , formatDate: 
+        function(date, format, language){
+          var fmtdate = _basebackend_.formatDate.call(this,date,format,language)
 
-
-
-      //-------------
-      //- Horizontal BAR CHART -
-      //-------------
-      var areaHorizontalChartData = {
-        labels  : ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัส', 'ศุกร์', 'เสาร์', 'อาทิตย์'],
-        datasets: [
-          {
-            label               : 'Digital Goods',
-            backgroundColor     : '#0FA820',
-            borderColor         : '#0FA820',
-            pointRadius          : false,
-            pointColor          : '#3b8bba',
-            pointStrokeColor    : '#0FA820',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: '#0FA820',
-            data                : [100, 48, 40, 19, 86, 27, 90]
-          },
-          {
-            label               : 'Electronics',
-            backgroundColor     : '#0F1BA8',
-            borderColor         : '#0F1BA8',
-            pointRadius         : false,
-            pointColor          : '#0F1BA8',
-            pointStrokeColor    : '#c1c7d1',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: '#0F1BA8',
-            data                : [88, 59, 80, 81, 56, 55, 40]
-          },
-        ]
-      }
-
-      var barChartCanvas = $('#horizontalBarChart').get(0).getContext('2d')
-      var barChartData = jQuery.extend(true, {}, areaHorizontalChartData)
-      var temp0 = areaHorizontalChartData.datasets[0]
-      var temp1 = areaHorizontalChartData.datasets[1]
-      barChartData.datasets[0] = temp1
-      barChartData.datasets[1] = temp0
-  
-      var barChartOptions = {
-        responsive              : true,
-        maintainAspectRatio     : false,
-        datasetFill             : false
-      }
-  
-      var barChart = new Chart(barChartCanvas, {
-        type: 'horizontalBar', 
-        data: barChartData,
-        options: barChartOptions
-      })
+          if (dspThaiYear(language)){
+            var formats = format //this.parseFormat(format)
+              , parts   = fmtdate && fmtdate.match(this.nonpunctuation) || []
+              , trnfrm  = {
+                  yy  : (thai.adj+date.getUTCFullYear()).toString().substring(2)
+                , yyyy: (thai.adj+date.getUTCFullYear()).toString()
+                }
+                
+            if (typeof formats === 'string')
+              formats = DPGlobal.parseFormat(format);
+              
+            if (parts.length == formats.parts.length) {
+              var seps  = $.extend([], formats.separators)
+                , xdate = []
+                
+              for (var i=0, cnt = formats.parts.length; i < cnt; i++) {
+                if (seps.length)
+                  xdate.push(seps.shift())
+                  
+                xdate.push(trnfrm[formats.parts[i]] || parts[i])
+              }
+              fmtdate = xdate.join('')
+            }
+          
+          }
+          return fmtdate
+        }
     })
+
+  // inherit core datepicker
+  var DatePicker = $.fn.datepicker.Constructor
+  
+  if (!DatePicker.prototype.fillThai){
+    var _basemethod_ = $.extend({},DatePicker.prototype)
+    
+    $.extend(DatePicker.prototype,{
+        fillThai: function(){
+            var d         = new Date(this.viewDate)
+              , year      = d.getUTCFullYear()
+              , month     = d.getUTCMonth()
+              , elem      = this.picker.find('.datepicker-days th:eq(1)'
+              , yearStart = ""
+              , yearEnd = "")
+              
+            elem
+              .text(elem.text()
+              .replace(''+year,''+(year+thai.adj)))
+
+            this.picker
+              .find('.datepicker-months')
+              .find('th:eq(2)')
+              .text(''+(year+thai.adj))
+            
+            //console.log(year);
+            // yearStart = (parseInt(d.getUTCFullYear() / 10, 10) * 10) + 543;
+            // yearEnd = (((parseInt(d.getUTCFullYear() / 10, 10) + 1) * 10) - 1) + 543;   
+            //year = parseInt((d.getUTCFullYear()+thai.adj)/100, 10) * 100
+
+            this.picker
+              .find('.datepicker-years')
+              .find('th:eq(2)')
+              .text((parseInt(d.getUTCFullYear() / 10, 10) * 10) + 543 + '-' + ((((parseInt(d.getUTCFullYear() / 10, 10) + 1) * 10) - 1) + 543))
+              .end()
+              .find('td')
+              .find('span.year')
+              .each( 
+                function() {
+                  // console.log(year);
+                  $(this)
+                    .text(Number($(this).text()) + thai.adj)
+                })
+            
+            // yearStart = (parseInt(d.getUTCFullYear() / 100, 10) * 100) + 543;
+            // yearEnd = (((parseInt(d.getUTCFullYear() / 100, 10) + 1) * 100) - 10) + 543;
+            //year = parseInt((d.getUTCFullYear()+thai.adj)/100, 10) * 100
+            
+            this.picker
+            .find('.datepicker-decades')
+            .find('th:eq(2)')
+            .text((parseInt(d.getUTCFullYear() / 100, 10) * 100) + 543 + '-' + ((((parseInt(d.getUTCFullYear() / 100, 10) + 1) * 100) - 10) + 543))
+            .end()
+            .find('td')
+            .find('span.decade')
+            .each( 
+              function() {
+                // console.log(year);
+                $(this)
+                  .text(Number($(this).text()) + thai.adj)
+              })
+
+            //yearStart = (parseInt(d.getUTCFullYear() / 1000, 10) * 1000) + 543;
+            //yearEnd = (((parseInt(d.getUTCFullYear() / 1000, 10) + 1) * 1000) - 100) + 543;
+            //year = parseInt((d.getUTCFullYear()+thai.adj)/1000, 10) * 1000
+            
+            this.picker
+            .find('.datepicker-centuries')
+            .find('th:eq(2)')
+            .text((parseInt(d.getUTCFullYear() / 1000, 10) * 1000) + 543 + '-' + ((((parseInt(d.getUTCFullYear() / 1000, 10) + 1) * 1000) - 100) + 543))
+            .end()
+            .find('td')
+            .find('span.century')
+            .each( 
+              function() {
+                // console.log(year);
+                $(this)
+                  .text(Number($(this).text()) + thai.adj)
+              })
+          }
+      , fill: function(){
+            _basemethod_.fill.call(this)
+            
+            if (dspThaiYear(this.o.language))
+              this.fillThai()
+          }
+      , clickThai: function(e){
+            var target  = $(e.target).closest('span')
+            
+            if (target.length === 1 && target.is('.year'))
+              target.text(Number(target.text()) - thai.adj)
+            if (target.length === 1 && target.is('.decade'))
+              target.text(Number(target.text()) - thai.adj)
+            if (target.length === 1 && target.is('.century'))
+              target.text(Number(target.text()) - thai.adj)
+          }
+      , click: function(e){
+            if (dspThaiYear(this.o.language))
+              this.clickThai(e)
+              
+            _basemethod_.click.call(this,e)
+          }
+      , keydown: function(e){
+            // allow arrow-down to show picker
+            if (this.picker.is(':not(:visible)')
+            && e.keyCode == 40 // arrow-down
+            && $(e.target).is('[autocomplete="off"]')) {
+                  this.show()
+                  return;
+            }
+            _basemethod_.keydown.call(this,e)
+          }
+      , hide: function(e){
+            // fix redundant hide in orginal code
+            if (this.picker.is(':visible'))
+              _basemethod_.hide.call(this,e)
+            //else console.log('redundant hide')
+          }
+      
+    })
+  }
+}(jQuery));
+
+</script>
+<script>
+    ;(function($){
+	// en-th - (rare use) english language with thai-year
+	$.fn.datepicker.dates['en-th'] = 
+	// en-en.th - english language with smart thai-year input (2540-2569) conversion 
+	$.fn.datepicker.dates['en-en.th'] = 
+							$.fn.datepicker.dates['en'];
+	
+	// th-th - thai language with thai-year
+	$.fn.datepicker.dates['th-th'] =
+	$.fn.datepicker.dates['th'] = {
+		format: 'dd/mm/yyyy',
+		days: ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัส", "ศุกร์", "เสาร์", "อาทิตย์"],
+		daysShort: ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส", "อา"],
+		daysMin: ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส", "อา"],
+		months: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"],
+		monthsShort: ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."],
+		today: "วันนี้"
+	};
+}(jQuery));
+
+</script>
+<script id="example_script"  type="text/javascript">
+    function demo() {
+      $('.datepicker').datepicker();
+    }
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.0/Chart.bundle.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      $('pre[data-source]').each(function(){
+        var $this = $(this),
+          $source = $($this.data('source'));
+
+        var text = [];
+        $source.each(function(){
+          var $s = $(this);
+          if ($s.attr('type') == 'text/javascript'){
+            text.push($s.html().replace(/(\n)*/, ''));
+          } else {
+            text.push($s.clone().wrap('<div>').parent().html()
+              .replace(/(\"(?=[[{]))/g,'\'')
+              .replace(/\]\"/g,']\'').replace(/\}\"/g,'\'') // javascript not support lookbehind
+              .replace(/\&quot\;/g,'"'));
+          }
+        });
+        
+        $this.text(text.join('\n\n').replace(/\t/g, '    '));
+      });
+
+      prettyPrint();
+      demo();
+    });
+  </script>
